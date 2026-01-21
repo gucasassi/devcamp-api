@@ -3,7 +3,7 @@
 ######################################################################################################
 
 # Use a Node.js image with Alpine for smaller size.
-FROM node:24.10.0-alpine AS deps
+FROM node:24.13.0-alpine AS deps
 LABEL org.opencontainers.image.source=https://github.com/gucasassi/devcamp
 
 # Set working directory.
@@ -20,7 +20,7 @@ RUN npm install -g pnpm && pnpm install --frozen-lockfile
 ######################################################################################################
 
 # Use a minimal Node.js image for production and assign metadata for source repository.
-FROM node:24.10.0-alpine AS production
+FROM node:24.13.0-alpine AS production
 LABEL org.opencontainers.image.source=https://github.com/gucasassi/devcamp
 
 # Set working directory
